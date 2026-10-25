@@ -1,0 +1,215 @@
+{
+  "testedAt": "2026-10-25T08:17:05.052Z",
+  "model": "gpt-4.1",
+  "report": [
+    {
+      "name": "letter",
+      "elapsedMs": 7182,
+      "result": {
+        "title": "DEMANDE DE PIÈCES",
+        "sender": "MAISON DES SOLIDARITÉS — ORGANISME FICTIF",
+        "applicant": "Alex Martin",
+        "summary": "The letter requests that Alex Martin submit two documents by October 31, 2026: (1) proof of address less than three months old in their name, and (2) a readable copy of a currently valid identity document. Respondents are asked to recall reference PB-2026-014 in their reply.",
+        "deadline": "2026-10-31",
+        "deadlineQuote": "merci de transmettre avant le 31 octobre 2026",
+        "requirements": [
+          {
+            "id": "justif-domicile",
+            "title": "Proof of address less than three months old in the applicant's name",
+            "detail": "Un justificatif de domicile de moins de trois mois à votre nom.",
+            "quote": "Un justificatif de domicile de moins de trois mois à votre nom."
+          },
+          {
+            "id": "id-valid",
+            "title": "Readable copy of a valid identity document",
+            "detail": "Une copie lisible de votre pièce d’identité en cours de validité.",
+            "quote": "Une copie lisible de votre pièce d’identité en cours de validité."
+          }
+        ],
+        "warnings": [],
+        "status": "analysis",
+        "explanation": "Two documents are explicitly requested: recent proof of address and a valid identity document. The applicant is identified as Alex Martin. There is a clear deadline and a reference code for responses.",
+        "replyFrench": "",
+        "replyTranslation": ""
+      },
+      "usage": {
+        "input_tokens": 1277,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 292,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1569
+      }
+    },
+    {
+      "name": "old_bill",
+      "elapsedMs": 1870,
+      "result": {
+        "title": "DEMANDE DE PIÈCES",
+        "sender": "MAISON DES SOLIDARITÉS — ORGANISME FICTIF",
+        "applicant": "Alex Martin",
+        "summary": "The request is for a proof of address less than three months old in the applicant's name.",
+        "deadline": "2026-10-31",
+        "deadlineQuote": "merci de transmettre avant le 31 octobre 2026",
+        "requirements": [
+          {
+            "id": "justif-domicile",
+            "title": "Proof of address less than three months old in the applicant's name",
+            "detail": "Un justificatif de domicile de moins de trois mois à votre nom.",
+            "quote": "Un justificatif de domicile de moins de trois mois à votre nom."
+          }
+        ],
+        "warnings": [
+          "The supporting document is dated 10 janvier 2026, which is more than three months before the letter's deadline of 31 octobre 2026.",
+          "The document explicitly states it is too old: 'Ce document est trop ancien pour la demande.'"
+        ],
+        "status": "mismatch",
+        "explanation": "The submitted document is in the applicant's name but is dated January 2026, far earlier than the 'less than three months old' requirement relative to the October 2026 deadline. The document itself states it is too old for the request.",
+        "replyFrench": "",
+        "replyTranslation": ""
+      },
+      "usage": {
+        "input_tokens": 1627,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 263,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1890
+      }
+    },
+    {
+      "name": "current_bill",
+      "elapsedMs": 2213,
+      "result": {
+        "title": "DEMANDE DE PIÈCES",
+        "sender": "MAISON DES SOLIDARITÉS — ORGANISME FICTIF",
+        "applicant": "Alex Martin",
+        "summary": "The request is for a proof of address less than three months old in the name of Alex Martin. The uploaded document is an October 2026 utility bill in the name of Alex Martin with a specific address.",
+        "deadline": "2026-10-31",
+        "deadlineQuote": "merci de transmettre avant le 31 octobre 2026",
+        "requirements": [
+          {
+            "id": "justif-domicile",
+            "title": "Proof of address less than three months old in the applicant's name",
+            "detail": "Un justificatif de domicile de moins de trois mois à votre nom.",
+            "quote": "Un justificatif de domicile de moins de trois mois à votre nom."
+          }
+        ],
+        "warnings": [
+          "Le document présenté porte la mention « DÉMONSTRATION UNIQUEMENT — AUCUNE VALEUR OFFICIELLE », ce qui peut le rendre inutilisable comme preuve officielle."
+        ],
+        "status": "match",
+        "explanation": "Le document est intitulé « FACTURE FICTIVE — OCTOBRE » au nom d’Alex Martin, daté du 10 octobre 2026, ce qui est bien de moins de trois mois avant la date limite fixée. L’adresse correspond à un justificatif classique de domicile. Cependant, il est explicitement indiqué qu’il s’agit d’un document de démonstration sans valeur officielle.",
+        "replyFrench": "",
+        "replyTranslation": ""
+      },
+      "usage": {
+        "input_tokens": 1627,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 303,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1930
+      }
+    },
+    {
+      "name": "no_deadline",
+      "elapsedMs": 1910,
+      "result": {
+        "title": "DEMANDE SANS DATE LIMITE",
+        "sender": "ORGANISME FICTIF — TEST",
+        "applicant": "",
+        "summary": "The letter requests the transmission of a proof of address issued within the last three months in the applicant's name. The letter states that there is no specified deadline.",
+        "deadline": null,
+        "deadlineQuote": "Aucune date limite n’est indiquée dans ce courrier.",
+        "requirements": [
+          {
+            "id": "justificatif_domicile",
+            "title": "Proof of address",
+            "detail": "A proof of address dated within the last three months and in the applicant's name.",
+            "quote": "Merci de nous transmettre un justificatif de domicile de moins de trois mois à votre nom."
+          }
+        ],
+        "warnings": [],
+        "status": "analysis",
+        "explanation": "This is a request for a proof of address no older than three months, in the applicant's name. No submission deadline is mentioned. All information was explicitly stated in the letter.",
+        "replyFrench": "",
+        "replyTranslation": ""
+      },
+      "usage": {
+        "input_tokens": 1277,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 242,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1519
+      }
+    },
+    {
+      "name": "reply",
+      "elapsedMs": 3970,
+      "result": {
+        "title": "DEMANDE DE PIÈCES",
+        "sender": "MAISON DES SOLIDARITÉS — ORGANISME FICTIF",
+        "applicant": "Alex Martin",
+        "summary": "Lettre demandant à Alex Martin de fournir deux pièces justificatives avant le 31 octobre 2026 : un justificatif de domicile récent à son nom et une copie lisible d’une pièce d’identité en cours de validité. Référence à rappeler : PB-2026-014.",
+        "deadline": "2026-10-31",
+        "deadlineQuote": "merci de transmettre avant le 31 octobre 2026",
+        "requirements": [
+          {
+            "id": "justif-domicile",
+            "title": "Justificatif de domicile de moins de trois mois à votre nom",
+            "detail": "Un justificatif de domicile de moins de trois mois à votre nom.",
+            "quote": "Un justificatif de domicile de moins de trois mois à votre nom."
+          },
+          {
+            "id": "id-valid",
+            "title": "Copie lisible d’une pièce d’identité en cours de validité",
+            "detail": "Une copie lisible de votre pièce d’identité en cours de validité.",
+            "quote": "Une copie lisible de votre pièce d’identité en cours de validité."
+          }
+        ],
+        "warnings": [
+          "Le justificatif de domicile fourni comporte la mention « DÉMONSTRATION UNIQUEMENT — AUCUNE VALEUR OFFICIELLE »."
+        ],
+        "status": "reply",
+        "explanation": "Le justificatif de domicile fourni correspond à la demande (nom, date, adresse), mais il comporte une mention qui risque de le rendre irrecevable. La copie lisible d'une pièce d'identité en cours de validité n’est pas jointe.",
+        "replyFrench": "Madame, Monsieur,\n\nEn réponse à votre demande référencée PB-2026-014, je vous adresse un justificatif de domicile établi à mon nom et daté d'octobre 2026. \n\nJe vous informe toutefois que ce document porte la mention « DÉMONSTRATION UNIQUEMENT — AUCUNE VALEUR OFFICIELLE » ; si cela ne convient pas, je reste à votre disposition pour fournir un justificatif conforme si nécessaire.\n\nJe vous prie de noter que la copie de ma pièce d’identité en cours de validité reste à transmettre.\n\nJe vous remercie par avance de l’attention portée à ma démarche et reste à votre disposition pour tout complément.\n\nVeuillez agréer, Madame, Monsieur, l’expression de mes salutations distinguées.\n\nAlex Martin\n[à compléter : adresse, coordonnées]",
+        "replyTranslation": "Dear Sir or Madam,\n\nIn response to your request referenced PB-2026-014, I am sending you a proof of address in my name, dated October 2026.\n\nPlease note, however, that this document is marked 'FOR DEMONSTRATION ONLY — NO OFFICIAL VALUE'; if this is not acceptable, I remain available to provide a compliant proof of address if needed.\n\nPlease also note that the copy of my currently valid identity document remains to be provided.\n\nThank you in advance for your attention to my request. I remain at your disposal for any further information.\n\nYours sincerely,\n\nAlex Martin\n[please complete: address, contact details]"
+      },
+      "usage": {
+        "input_tokens": 1113,
+        "input_tokens_details": {
+          "cache_write_tokens": 0,
+          "cached_tokens": 0
+        },
+        "output_tokens": 664,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 1777
+      }
+    },
+    {
+      "name": "speech",
+      "status": 200,
+      "bytes": 350592
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {validateInput,schema} from '../lib/bridge.mjs';
+test('accepts pasted letter',()=>assert.equal(validateInput({task:'analyze',language:'en',text:'A letter'}).task,'analyze'));
+test('rejects empty letter',()=>assert.throws(()=>validateInput({task:'analyze',language:'en',text:' '})));
+test('rejects unknown actions',()=>assert.throws(()=>validateInput({task:'send',language:'en',text:'test'})));
+test('rejects unsupported language',()=>assert.throws(()=>validateInput({task:'analyze',language:'xx',text:'test'})));
+test('rejects executable input',()=>assert.throws(()=>validateInput({task:'analyze',language:'en',file:{data:'data:text/html;base64,AAAA'}})));
+test('rejects oversized input',()=>assert.throws(()=>validateInput({task:'analyze',language:'en',text:'x'.repeat(20001)})));
+test('checks require a selected requirement',()=>assert.throws(()=>validateInput({task:'check',language:'en',file:{data:'data:image/png;base64,AAAA'}})));
+test('reply requires analyzed case',()=>assert.throws(()=>validateInput({task:'reply',language:'en'})));
+test('deadlines can remain unknown',()=>assert.ok(schema.properties.deadline.type.includes('null')));
